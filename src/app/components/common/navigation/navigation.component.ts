@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
-  
+  categories: string[] = ['Summary', 'Techical', 'Achievements','Work Exp','Academics', 'Hobbies'];
+
   constructor() { }
 
   ngOnInit(): void {

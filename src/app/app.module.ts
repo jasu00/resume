@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/common/header/header.component';
 import { NavigationComponent } from './components/common/navigation/navigation.component';
 import { BodyComponent } from './components/common/body/body.component';
 import { FooterComponent } from './components/common/footer/footer.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/common/footer/footer.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatListModule,
     StoreModule.forRoot({}, {})
   ],
   providers: [],
