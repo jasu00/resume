@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import * as fromFeature from './store/feature.state';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +23,8 @@ import { MatListModule } from '@angular/material/list';
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}),
+    StoreModule.forFeature("featureState", fromFeature.featureReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

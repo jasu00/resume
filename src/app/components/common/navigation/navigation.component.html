@@ -1,5 +1,5 @@
-<mat-selection-list #shoes [multiple]="false">
-    <mat-list-option *ngFor="let category of categories" [value]="category">
+<mat-nav-list>
+    <a mat-list-item *ngFor="let category of categories" accesskey="90" (click)="showCategory(category)">
         {{category}}
-    </mat-list-option>
-</mat-selection-list>
+    </a>
+</mat-nav-list>

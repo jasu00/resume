@@ -1,14 +1,23 @@
-.toolbar[_ngcontent-gbu-c11] {
-
+.header {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
-    display: flex;
     align-items: center;
     background-color: #1976d2;
     color: white;
     font-weight: 600;
-
+    height: 40px;
+}
+.header-banner{
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.header-icons{
+    float:right;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
