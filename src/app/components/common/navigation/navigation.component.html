@@ -1,7 +1,9 @@
 <mat-nav-list>
     <ul>
         <li [ngClass]="{active:category===selectedCategory}" mat-list-item *ngFor="let category of categories">
-            <a href="javascript:void(0);" (click)="showCategory(category)"><i  class="material-icons">home</i> <span>{{category}}</span></a>
+            <a href="javascript:void(0);" (click)="showCategory(category)">
+                <i  class="material-icons">play_arrow</i> <span>{{category}}</span>
+            </a>
         </li>
     </ul>
 </mat-nav-list>

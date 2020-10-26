@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Categories } from 'src/app/model/enum';
 import { initialState } from 'src/app/store/session.reducers';
 import { SessionDataManager } from "../../../services/session.datamanager.service"
+import {NavigationMenu} from "../../../model/navigation_menu"
 
 @Component({
   selector: 'app-navigation',
