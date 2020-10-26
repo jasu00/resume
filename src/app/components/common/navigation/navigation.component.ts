@@ -11,6 +11,7 @@ import { SessionDataManager } from "../../../services/session.datamanager.servic
 })
 export class NavigationComponent implements OnInit {
 
+  selectedCategory:string;
   categories: string[];
 
   constructor(private sessionDataManager:SessionDataManager) { 
@@ -18,6 +19,9 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sessionDataManager.getSelectedCategory$().subscribe(selectedCategory=>{
+      this.selectedCategory = selectedCategory;
+    });
   }
 
   initializeCategories(){    
@@ -25,6 +29,7 @@ export class NavigationComponent implements OnInit {
   }
 
   showCategory(selectedCategory:string){
+    this.selectedCategory = selectedCategory;
     this.sessionDataManager.setSelectedCategory$(selectedCategory);
   }
 }

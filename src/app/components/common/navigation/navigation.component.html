@@ -1,5 +1,8 @@
 <mat-nav-list>
-    <a mat-list-item *ngFor="let category of categories" accesskey="90" (click)="showCategory(category)">
-        {{category}}
-    </a>
+    <ul>
+        <li [ngClass]="{active:category===selectedCategory}" mat-list-item *ngFor="let category of categories">
+            <a href="javascript:void(0);" (click)="showCategory(category)"><i  class="material-icons">home</i> <span>{{category}}</span></a>
+        </li>
+    </ul>
 </mat-nav-list>
+
