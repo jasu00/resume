@@ -5,7 +5,7 @@ import * as SessionActions from "./session.actions";
 export const initialState: SessionState = initializeSessionState();
 export function initializeSessionState(): SessionState {
     return {
-        selectedCategory: "Summary"
+        selectedCategory: "Privacy Policy"
     }
 }
 

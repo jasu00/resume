@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionDataManager } from 'src/app/services/session.datamanager.service';
-import { Categories } from "../../../model/enum";
+import { Categories, Profile } from "../../../model/enum";
 import {ResumeCategoryPoint} from "../../../model/resume_category_point";
 
 @Component({
@@ -12,8 +12,10 @@ export class BodyComponent implements OnInit {
 
   selectedCategory:string;
   categoryMap:Map<string,ResumeCategoryPoint[]>;
+  currentYear:number;
 
-  constructor(private sessionDataManager:SessionDataManager) { 
+  constructor(private sessionDataManager:SessionDataManager) {     
+    this.currentYear = new Date().getFullYear();
     this.initializeCategoryMap();
   }
 
@@ -25,9 +27,17 @@ export class BodyComponent implements OnInit {
 
   initializeCategoryMap(){
     let categoryMap = new Map();
+    let privacyList:ResumeCategoryPoint[]= 
+    [
+      {icon:"verified_user",desc: "We consider privacy is of utmost importance."},
+      {icon:"verified_user",desc: "We do not collect the data from the iOS App, to any external serves."},
+      {icon:"verified_user",desc: "The app do not have any web integration to send or recieve data"},
+      {icon:"verified_user",desc: "The data enetered under Settings, are stored on phone, and is used only inside app for display and derive app customization for user."},
+      {icon:"verified_user",desc:"Jan-21-2021, We reserve the rights to update the policy from time to time. You are advised to review the policy from time to time."},
+    ];
     let summaryList:ResumeCategoryPoint[]= 
     [
-      {icon:"functions",desc:"14 years total IT experience"},
+      {icon:"functions",desc: (this.currentYear-Profile.StartExperience)+" years total IT experience"},
       {icon:"groups",desc:"Different roles: Developer, Support Team Lead, QA Team Lead"},
       {icon:"build",desc:"Worked with technologies like Angular8, Java, J2EE, Elastic Index, Lucene, Selenium, MongoDB"},
       {icon:"build",desc:"Worked with Tools Kibana, Rally, SmartSheet, Jenkins, CAE"},
@@ -61,6 +71,7 @@ export class BodyComponent implements OnInit {
       {icon:"military_tech",desc:"Star Excellence Award: Mar 2013: promoting innovation, leading change and embarking on new ways to drive business goals"},
       {icon:"military_tech",desc:"Person for FY11: Jul 2011: Demonstrating excellence in handling critical applications and providing technical solution"}];
 
+    categoryMap.set(Categories.Privacy,privacyList);  
     categoryMap.set(Categories.Summary,summaryList);
     categoryMap.set(Categories.TechSummary,techSummary);
     categoryMap.set(Categories.Certifications,certifications);
