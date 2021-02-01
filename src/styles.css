@@ -104,6 +104,12 @@ app-navigation >mat-nav-list> ul > li.active > a {
     text-align: center;
 }
 
+.privacypolicy{
+  position: relative;
+    margin: 0 auto;
+    padding: 1em 0;
+}
+
 .timeline {
     position: relative;
     width: 660px;

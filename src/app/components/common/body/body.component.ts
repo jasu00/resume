@@ -29,11 +29,7 @@ export class BodyComponent implements OnInit {
     let categoryMap = new Map();
     let privacyList:ResumeCategoryPoint[]= 
     [
-      {icon:"verified_user",desc: "We consider privacy is of utmost importance."},
-      {icon:"verified_user",desc: "We do not collect the data from the iOS App, to any external serves."},
-      {icon:"verified_user",desc: "The app do not have any web integration to send or recieve data"},
-      {icon:"verified_user",desc: "The data enetered under Settings, are stored on phone, and is used only inside app for display and derive app customization for user."},
-      {icon:"verified_user",desc:"Jan-21-2021, We reserve the rights to update the policy from time to time. You are advised to review the policy from time to time."},
+      {icon:"verified_user",desc: ""},
     ];
     let summaryList:ResumeCategoryPoint[]= 
     [
